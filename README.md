@@ -255,6 +255,42 @@ Config: `~/.config/bat/config`
 
 ---
 
+## Sudo Without Password (NOPASSWD)
+
+To allow your user to run `sudo` without being prompted for a password:
+
+1. Install nano if not already available:
+
+```bash
+sudo pacman -S nano
+```
+
+2. Open the sudoers file safely with visudo:
+
+```bash
+sudo EDITOR=nano visudo
+```
+
+3. Scroll to the bottom and add (username is `jayp`):
+
+```
+jayp ALL=(ALL) NOPASSWD: ALL
+```
+
+4. Save and exit nano: `Ctrl+O` → `Enter` → `Ctrl+X`
+
+5. Test in a new terminal:
+
+```bash
+sudo whoami
+# Should print: root (no password prompt)
+```
+
+> ⚠️ Always use `visudo` instead of editing `/etc/sudoers` directly — it validates syntax before saving so you can't accidentally lock yourself out.
+> If you ever switch to `doas`, the config file is `/etc/doas.conf` instead.
+
+---
+
 ## Notes
 
 - This file is a living document — update as the setup evolves.
