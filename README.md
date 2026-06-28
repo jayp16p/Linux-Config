@@ -83,6 +83,17 @@ MesloLGL Nerd Font enables icon glyphs used by tools like `eza`, `btop`, and `ne
 
 ---
 
+## Fonts
+
+### Cascadia Mono Nerd Font
+Installed for use across the UI.
+
+```bash
+sudo pacman -Syu ttf-cascadia-mono-nerd
+```
+
+---
+
 ## Shell — Bash
 
 Config location: `~/.bashrc`
@@ -145,6 +156,16 @@ sudo pacman -S btop
 | `/` | Filter processes |
 
 Config: `~/.config/btop/btop.conf`
+
+**Theme: Catppuccin Mocha**
+
+```bash
+# Download the theme
+curl -o ~/.config/btop/themes/catppuccin_mocha.theme \
+  https://raw.githubusercontent.com/catppuccin/btop/main/themes/catppuccin_mocha.theme
+```
+
+Then in btop press `F2` → **Color theme** → select `catppuccin_mocha`.
 
 ---
 
